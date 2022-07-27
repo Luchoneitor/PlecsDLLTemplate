@@ -14,3 +14,7 @@ INSTRUCTIONS
 	git commit "new project initialized"
 10. Synchronize with github repo
 11. You're ready to go!
+
+NOTE: In case you want to follow a gitflow workflow add two branches to your repo : main  develop
+make the default option of this repo no fast forward with: git config --add merge.ff false
+start making branch features and merging, happy coding!
