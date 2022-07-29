@@ -41,7 +41,7 @@
 //ASSIGN Otuputs: PWM, Scopes, Relays
 #define PWM(duty,port)\
             _STATIC_ASSERT(port>=1 && port< NO_OF_PWMS+1);\
-            aState->outputs[PWM_BASE+port-1] = 1.0f-duty
+            aState->outputs[PWM_BASE+port-1] = duty
 
 #define PHS(phs,port)\
             _STATIC_ASSERT(port>=1 && port< NO_OF_PWMS+1);\
