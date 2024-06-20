@@ -1,7 +1,7 @@
 
+
 -- SOLUTION Template
-workspace "Template"
-	architecture "x86_64"
+workspace "test"
 
 
 	configurations 
@@ -14,8 +14,8 @@ workspace "Template"
 
 
 -- PROJECT: DLL
-project "Template_dll"
-location "Template_dll"
+project "test_dll"
+location "test_dll"
 kind	"SharedLib" 
 language "C"
 cdialect "C11"
@@ -41,19 +41,25 @@ fatalwarnings { "4700"; "6001" }
 
 
 	filter "system:Windows"
-			systemversion "latest"
+	 	systemversion "latest"
+		architecture "x86_64"
+		cdialect "C17"
+		pchheader "pch.h"
+		pchsource "%{prj.name}/src/pch.c"
 
-			defines
-			{
-				"GMPPT_BUILD_DLL",
-				"PLECS"
-			}
- 
+
+	filter "system:macosx"
+		architecture "ARM64"
+		cdialect "C11"
+        pchheader "src/pch.h"
+
 	filter "configurations:Debug"
-			defines	"GMPPT_DEBUG"
+			defines	"test_DEBUG"
 			symbols  "On"
 
 	filter "configurations:Release"
-			defines	"GMPPT_RELEASE"
+			defines	"test_RELEASE"
 			optimize "On"
+			intrinsics "off"
+			inlining "Auto"
 

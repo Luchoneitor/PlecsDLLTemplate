@@ -357,3 +357,8 @@ healthchecksdb
 # PS_dll_sandbox 
 #GenerateProject.bat
 
+
+# XCode Solution and macos files
+*.xcodeproj/
+*.DS_Store
+*.xcworkspace
