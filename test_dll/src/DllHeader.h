@@ -22,7 +22,7 @@ extern "C" {
 
 #pragma pack(push, 4)
 
-typedef struct
+typedef struct SimulationSizes
 {
    int numInputs;      /* the number of inputs that the DLL needs           */
    int numOutputs;     /* the number of outputs that the DLL provides       */
@@ -30,7 +30,7 @@ typedef struct
    int numParameters;  /* the number of user parameters that the DLL needs  */
 }SimulationSizes;
 
-typedef struct 
+typedef struct SimulationState
 {
    const double* const inputs;     /* array of input values (read-only)      */
    double* const outputs;          /* array of output values (to fill by DLL) */

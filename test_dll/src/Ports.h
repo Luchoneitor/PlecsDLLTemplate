@@ -25,7 +25,6 @@
 // ASSIGN Triggers
 
 #define TRIG(trig,port)\
-            _STATIC_ASSERT(port>=0 && port< NO_OF_TRIG);\
             trig = (uint16_t)aState->inputs[TRIG_BASE+port]
 
 #define TRIG_0 aState->inputs[TRIG_BASE+0]
@@ -35,32 +34,26 @@
 //ASSIGN Inputs
 
 #define MEAS(meas,port)\
-            _STATIC_ASSERT(port>=0 && port< NO_OF_MEAS+1);\
             meas = (float)aState->inputs[MEAS_BASE+port-1]
 
 //ASSIGN Otuputs: PWM, Scopes, Relays
 #define PWM(duty,port)\
-            _STATIC_ASSERT(port>=1 && port< NO_OF_PWMS+1);\
             aState->outputs[PWM_BASE+port-1] = duty
 
 #define PHS(phs,port)\
-            _STATIC_ASSERT(port>=1 && port< NO_OF_PWMS+1);\
             aState->outputs[PWM_BASE+port-1] = phs
 
 #define SCOPE(value,port)\
-            _STATIC_ASSERT(port>=1 && port< NO_OF_SCOPES+1);\
             aState->outputs[SCOPE_BASE+port-1] = value
 
 
 #define RELAY(value,port)\
-            _STATIC_ASSERT(port>=1 && port< NO_OF_RELAYS+1);\
            aState->outputs[REL_BASE+port-1] = value
 
 
 
 //ASSIGN PARAMS
 #define PARAM(param,port)\
-            _STATIC_ASSERT(port>=0 && port< NO_OF_PARAMS+1);\
             param = (float)aState->parameters[port-1]
 
 
