@@ -43,7 +43,7 @@ fatalwarnings { "4700"; "6001" }
 	filter "system:Windows"
 	 	systemversion "latest"
 		architecture "x86_64"
-		cdialect "C17"
+		cdialect "C11"
 		pchheader "pch.h"
 		pchsource "%{prj.name}/src/pch.c"
 
